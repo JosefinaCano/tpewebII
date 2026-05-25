@@ -1,0 +1,35 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    margin: 0;
+    padding: 40px;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.lista-generos{
+    list-style: none;
+    padding: 0;
+}
+
+.genero-item{
+    margin: 10px 0;
+}
+
+.genero-item a{
+    display: block;
+    padding: 12px;
+    background: #1f1f1f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.genero-item a:hover{
+    background: #333;
+    transform: translateX(5px);
+}

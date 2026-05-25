@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="<?= BASE_URL ?>css/header.css">
+<header class="main-header">
+    <nav>
+        <ul>
+
+            <li>
+                <a href="<?= BASE_URL ?>home">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>generos">
+                    Generos
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>miColeccion">
+                    Mi Colección
+                </a>
+            </li>
+        
+
+            <?php if (
+                isset($_SESSION['ROL']) &&
+                $_SESSION['ROL'] === 'admin'
+            ): ?>
+
+                <li>
+                    <a href="<?= BASE_URL ?>admin">
+                        Administración
+                    </a>
+                </li>
+
+            <?php endif; ?>
+
+        </ul>
+    </nav>
+
+    <div class="logo">
+        discdogs
+    </div>
+
+    <a href="<?= BASE_URL ?>logout" class="btn-logout">
+        Logout
+    </a>
+
+</header>
+

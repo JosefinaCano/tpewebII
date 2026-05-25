@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Género</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add.css">
+</head>
+<body>
+    <h1>Agregar Género</h1>
+
+    <form action="<?= BASE_URL ?>admin/addGenero" method="post">
+        <label for="nombre">Nombre del género:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <button type="submit">Agregar Género</button>
+    </form>
+
+    <p><a href="<?= BASE_URL ?>admin/listGeneros">Volver</a></p>
+</body>
+</html>

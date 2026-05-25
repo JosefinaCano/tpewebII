@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador</title>
+
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/admin.css">
+</head>
+<body>
+
+    <div class="admin-container">
+
+        <h1>
+            Panel de Administración
+        </h1>
+
+        <div class="admin-buttons">
+
+            <a
+                href="<?= BASE_URL ?>admin/listDiscos"
+                class="admin-card"
+            >
+                <div class="icono">💿</div>
+                <h2>Discos</h2>
+                <p>
+                    Administrar catálogo de discos
+                </p>
+            </a>
+
+            <a
+                href="<?= BASE_URL ?>admin/listArtistas"
+                class="admin-card"
+            >
+                <div class="icono">🎤</div>
+                <h2>Artistas</h2>
+                <p>
+                    Administrar artistas registrados
+                </p>
+            </a>
+
+            <a
+                href="<?= BASE_URL ?>admin/listGeneros"
+                class="admin-card"
+            >
+                <div class="icono">🎵</div>
+                <h2>Géneros</h2>
+                <p>
+                    Administrar géneros registrados
+                </p>
+            </a>
+
+        </div>
+
+    </div>
+
+    <p><a href="<?= BASE_URL ?>home" class="back-button">Volver al Home</a></p>
+
+
+</body>
+</html>

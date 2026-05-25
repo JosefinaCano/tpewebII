@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:
+        linear-gradient(
+            to bottom,
+            #151515,
+            #090909
+        );
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    padding: 3vw;
+}
+
+
+h1{
+    text-align: center;
+
+    margin-bottom: 2vw;
+
+    font-size: 2.2vw;
+
+    letter-spacing: .1vw;
+
+    color: #f5f5f5;
+}
+
+
+.btn-add{
+    display: inline-block;
+
+    margin-bottom: 2vw;
+
+    padding: .9vw 1.6vw;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2e2e2e,
+            #1a1a1a
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: .4vw;
+
+    border:
+        .08vw solid #444;
+
+    transition: .25s;
+}
+
+.btn-add:hover{
+    transform:
+        translateY(-.15vw);
+
+    background:
+        linear-gradient(
+            145deg,
+            #3c3c3c,
+            #222
+        );
+
+    box-shadow:
+        0 .5vw 1vw rgba(0,0,0,.4);
+}
+
+
+table{
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: #121212;
+
+    border-radius: .5vw;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 1vw 2vw rgba(0,0,0,.4);
+}
+
+
+thead{
+    background:
+        linear-gradient(
+            to right,
+            #1e1e1e,
+            #2a2a2a
+        );
+}
+
+thead th{
+    padding: 1vw;
+
+    text-align: left;
+
+    font-size: 1vw;
+
+    color: #ddd;
+
+    border-bottom:
+        .08vw solid #444;
+}
+
+
+tbody tr{
+    transition: .2s;
+}
+
+tbody tr:nth-child(even){
+    background-color: #181818;
+}
+
+tbody tr:hover{
+    background-color: #252525;
+}
+
+
+tbody td{
+    padding: 1vw;
+
+    border-bottom:
+        .08vw solid #2f2f2f;
+
+    font-size: .95vw;
+
+    color: #eee;
+}
+
+
+a{
+    color: #d0d0d0;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+a:hover{
+    color: white;
+}
+
+
+.btn-edit{
+    padding: .45vw .9vw;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3a3a3a,
+            #222
+        );
+
+    border-radius: .3vw;
+
+    border:
+        .08vw solid #555;
+}
+
+.btn-edit:hover{
+    background:
+        linear-gradient(
+            145deg,
+            #4a4a4a,
+            #2d2d2d
+        );
+}
+
+
+.btn-delete{
+    padding: .45vw .9vw;
+
+    background:
+        linear-gradient(
+            145deg,
+            #4a1f1f,
+            #2a1010
+        );
+
+    border-radius: .3vw;
+
+    border:
+        .08vw solid #703030;
+}
+
+.btn-delete:hover{
+    background:
+        linear-gradient(
+            145deg,
+            #662828,
+            #3a1515
+        );
+}
+
+
+.back-button{
+    display: inline-block;
+
+    margin-top: 2vw;
+
+    padding: .9vw 1.6vw;
+
+    background:
+        linear-gradient(
+            145deg,
+            #242424,
+            #151515
+        );
+
+    border-radius: .4vw;
+
+    border:
+        .08vw solid #444;
+}
+
+.back-button:hover{
+    background:
+        linear-gradient(
+            145deg,
+            #343434,
+            #1f1f1f
+        );
+}
+
+
+p{
+    font-size: 1vw;
+}
+
+
+@media (max-width: 900px){
+
+    h1{
+        font-size: 4vw;
+    }
+
+    thead th,
+    tbody td{
+        font-size: 2vw;
+
+        padding: 2vw;
+    }
+
+    .btn-add,
+    .btn-edit,
+    .btn-delete,
+    .back-button{
+        font-size: 2vw;
+
+        padding: 1.5vw 2vw;
+    }
+}
+
+@media (max-width: 600px){
+
+    body{
+        padding: 5vw;
+    }
+
+    h1{
+        font-size: 6vw;
+    }
+
+    table{
+        display: block;
+
+        overflow-x: auto;
+    }
+
+    thead th,
+    tbody td{
+        font-size: 3vw;
+    }
+
+    .btn-add,
+    .btn-edit,
+    .btn-delete,
+    .back-button{
+        font-size: 3vw;
+    }
+}

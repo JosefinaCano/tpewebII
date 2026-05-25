@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+}
+
+
+.catalogo{
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(16%, 1fr));
+
+    gap: 2vw;
+
+    padding: 3vw;
+}
+
+
+.catalogo a{
+    text-decoration: none;
+}
+
+
+.disco{
+    width: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c1c1c,
+            #0f0f0f
+        );
+
+    border-radius: .4vw;
+
+    overflow: hidden;
+
+    border: .08vw solid #2a2a2a;
+
+    transition: .35s;
+
+    position: relative;
+}
+
+.disco:hover{
+    transform:
+        translateY(-.4vw)
+        scale(1.03);
+
+    box-shadow:
+        0 1vw 2vw rgba(0,0,0,.6);
+}
+
+
+.disco img{
+    width: 100%;
+
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.titulo{
+    padding: 1vw;
+
+    background-color: #151515;
+
+    border-top:
+        .08vw solid #2a2a2a;
+}
+
+.titulo h3{
+    font-size: .95vw;
+
+    font-weight: normal;
+
+    text-align: center;
+
+    color: #eee;
+
+    letter-spacing: .05vw;
+}
+
+
+form{
+    margin-top: .6vw;
+}
+
+
+button{
+    width: 100%;
+
+    padding: .9vw;
+
+    border: none;
+
+    border-radius: .35vw;
+
+    background:
+        linear-gradient(
+            145deg,
+            #262626,
+            #171717
+        );
+
+    color: white;
+
+    font-size: .9vw;
+
+    letter-spacing: .05vw;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        .08vw solid #333;
+}
+
+
+button:hover{
+    background:
+        linear-gradient(
+            145deg,
+            #3a3a3a,
+            #1f1f1f
+        );
+
+    transform:
+        translateY(-.15vw);
+
+    box-shadow:
+        0 .4vw 1vw rgba(0,0,0,.45);
+}
+
+
+button:active{
+    transform:
+        scale(.97);
+}
+
+
+button::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.15),
+            transparent
+        );
+
+    transition: .5s;
+}
+
+button:hover::before{
+    left: 120%;
+}
+
+
+@media (max-width: 900px){
+
+    .catalogo{
+        grid-template-columns:
+            repeat(auto-fill, minmax(30%, 1fr));
+    }
+
+    .titulo h3{
+        font-size: 2vw;
+    }
+
+    button{
+        font-size: 2vw;
+        padding: 2vw;
+    }
+}
+
+@media (max-width: 600px){
+
+    .catalogo{
+        grid-template-columns:
+            repeat(auto-fill, minmax(45%, 1fr));
+    }
+
+    .titulo h3{
+        font-size: 3vw;
+    }
+
+    button{
+        font-size: 2.8vw;
+    }
+}

@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.main-header{
+    width: 100%;
+    height: 12vh;
+
+    background: linear-gradient(
+        to bottom,
+        #1b1b1b,
+        #111
+    );
+
+    border-bottom: 0.1vh solid #333;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 4%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.main-header nav{
+    width: 30%;
+}
+
+.main-header nav ul{
+    display: flex;
+
+    gap: 8%;
+
+    list-style: none;
+}
+
+.main-header nav a{
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 1vw;
+
+    letter-spacing: .08vw;
+
+    transition: .3s;
+}
+
+.main-header nav a:hover{
+    color: white;
+
+    text-shadow:
+        0 0 .5vw rgba(255,255,255,.5);
+}
+
+
+.logo{
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    font-size: 2vw;
+
+    letter-spacing: .4vw;
+
+    font-weight: bold;
+
+    text-transform: lowercase;
+}
+
+
+.login{
+    width: 10%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login img{
+    width: 2.2vw;
+    height: 2.2vw;
+
+    object-fit: contain;
+
+    opacity: .8;
+
+    transition: .3s;
+}
+
+.login img:hover{
+    opacity: 1;
+
+    transform: scale(1.08);
+}
+
+
+@media (max-width: 768px){
+
+    .main-header{
+        height: 10vh;
+    }
+
+    .main-header nav{
+        width: 45%;
+    }
+
+    .main-header nav a{
+        font-size: 2.2vw;
+    }
+
+    .logo{
+        font-size: 4vw;
+    }
+
+    .login img{
+        width: 5vw;
+        height: 5vw;
+    }
+}

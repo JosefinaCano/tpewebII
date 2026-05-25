@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Disco</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add.css">
+</head>
+<body>
+
+<h1>Agregar Disco</h1>
+
+<form action="<?= BASE_URL ?>admin/addDisco" method="POST">
+
+    <input type="text" name="titulo" placeholder="titulo" required>
+
+    <input type="date" name="fecha_lanzamiento" required>
+
+      <select name="id_artista" required>
+        <?php foreach($artistas as $artista): ?>
+            <option value="<?= $artista->id ?>">
+                <?= htmlspecialchars($artista->nombre) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+    <select name="id_genero" required>
+        <?php foreach($generos as $genero): ?>
+            <option value="<?= $genero->id ?>">
+                <?= htmlspecialchars($genero->nombre) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+    <button type="submit">Guardar</button>
+
+</form>
+
+</body>
+</html>

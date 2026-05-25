@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><?= htmlspecialchars($disco->titulo) ?></title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/disco.css">
+</head>
+<body>
+
+<?php require_once 'templates/header.phtml'; ?>
+
+<?php if (!empty($disco) && is_object($disco)): ?>
+
+<div class="disco-container">
+
+    <!-- PORTADA -->
+    <div class="disco-portada">
+        <img src="<?= BASE_URL ?>images/<?= $disco->id ?>.jpg"
+             alt="<?= htmlspecialchars($disco->titulo) ?>">
+    </div>
+
+    <!-- INFO -->
+    <div class="disco-info">
+
+        <h1><?= htmlspecialchars($disco->titulo) ?></h1>
+
+        <p><strong>Artista:</strong> <?= htmlspecialchars($disco->artista_nombre) ?></p>
+        <p><strong>Género:</strong> <?= htmlspecialchars($disco->genero_nombre) ?></p>
+        <p><strong>Fecha:</strong> <?= htmlspecialchars($disco->fecha_lanzamiento) ?></p>
+
+        <h2>Temas</h2>
+
+        <?php if (!empty($disco->temas)): ?>
+            <div class="temas">
+                <?php foreach (explode("\n", $disco->temas) as $tema): ?>
+                    <?php if (trim($tema) !== ''): ?>
+                        <p><?= htmlspecialchars($tema) ?></p>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <p class="sin-temas">Sin temas cargados</p>
+        <?php endif; ?>
+
+    </div>
+
+</div>
+
+<?php else: ?>
+
+    <p>Disco no disponible.</p>
+
+<?php endif; ?>
+
+</body>
+</html>

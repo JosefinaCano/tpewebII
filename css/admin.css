@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #111,
+            #050505
+        );
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+}
+
+
+.admin-container{
+    width: 80%;
+
+    text-align: center;
+}
+
+
+.admin-container h1{
+    font-size: 3vw;
+
+    margin-bottom: 4vw;
+
+    letter-spacing: .15vw;
+}
+
+
+.admin-buttons{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 4vw;
+
+    flex-wrap: wrap;
+}
+
+
+.admin-card{
+    width: 22%;
+
+    min-width: 240px;
+
+    padding: 3vw 2vw;
+
+    border-radius: 1vw;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d1d,
+            #0d0d0d
+        );
+
+    border:
+        .1vw solid #333;
+
+    transition: .35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.admin-card:hover{
+    transform:
+        translateY(-.5vw)
+        scale(1.03);
+
+    box-shadow:
+        0 1vw 2vw rgba(0,0,0,.6);
+
+    border-color: #555;
+}
+
+
+.admin-card::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    transition: .6s;
+}
+
+.admin-card:hover::before{
+    left: 130%;
+}
+
+
+.icono{
+    font-size: 4vw;
+
+    margin-bottom: 1.5vw;
+}
+
+
+.admin-card h2{
+    font-size: 1.8vw;
+
+    margin-bottom: 1vw;
+}
+
+.admin-card p{
+    font-size: .95vw;
+
+    color: #bbb;
+
+    line-height: 1.5;
+}
+
+.back-button{
+    display: inline-block;
+
+    margin-top: 2vw;
+
+    padding: .9vw 1.6vw;
+
+    background:
+        linear-gradient(
+            145deg,
+            #242424,
+            #151515
+        );
+
+    border-radius: .4vw;
+
+    border:
+        .08vw solid #444;
+}
+
+.back-button:hover{
+    background:
+        linear-gradient(
+            145deg,
+            #343434,
+            #1f1f1f
+        );
+}
+
+p{
+    font-size: 1vw;
+}
+
+
+/*---------*/
+
+@media (max-width: 900px){
+
+    .admin-container h1{
+        font-size: 6vw;
+    }
+
+    .icono{
+        font-size: 10vw;
+    }
+
+    .admin-card h2{
+        font-size: 4vw;
+    }
+
+    .admin-card p{
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 600px){
+
+    .admin-buttons{
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .admin-card{
+        width: 80%;
+
+        padding: 8vw 5vw;
+    }
+
+    .icono{
+        font-size: 14vw;
+    }
+
+    .admin-card h2{
+        font-size: 6vw;
+    }
+
+    .admin-card p{
+        font-size: 3vw;
+    }
+}

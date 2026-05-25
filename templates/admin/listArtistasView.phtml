@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrar catálogo</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/list.css">
+</head>
+<body>
+    <h1>Discdogs</h1>
+
+    <p>
+        <a href="<?= BASE_URL ?>admin/addArtista" class="btn-add">Agregar Artista</a>
+    </p>
+
+    <?php if (!empty($artistas)): ?>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>País</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($artistas as $artista): ?>
+                    <tr>
+                        <td><?= $artista->id ?></td>
+                        <td><?= htmlspecialchars($artista->nombre) ?></td>
+                        <td><?= htmlspecialchars($artista->pais) ?></td>
+                        <td><?= htmlspecialchars($artista->descripcion) ?></td>
+                        <td>
+                            <a href="<?= BASE_URL ?>admin/deleteArtista/<?= $artista->id ?>"
+                               onclick="return confirm('¿Seguro que querés eliminar este artista?')"
+                               class="btn-delete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>No hay artistas para mostrar.</p>
+    <?php endif; ?>
+
+    <p><a href="<?= BASE_URL ?>home" class="back-button">Volver al Home</a></p>
+    <p><a href="<?= BASE_URL ?>admin" class="back-button">Volver al administrador</a></p>
+
+</body>
+</html>

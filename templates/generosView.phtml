@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Géneros</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/generos.css">
+</head>
+<body>
+
+
+    <?php if (!empty($generos)): ?>
+
+        <ul class="lista-generos">
+
+            <?php foreach ($generos as $genero): ?>
+
+                <li class="genero-item">
+
+                    <a href="<?= BASE_URL ?>home/genero/<?= $genero->id ?>">
+
+                        <?= htmlspecialchars($genero->nombre) ?>
+
+                    </a>
+
+                </li>
+
+            <?php endforeach; ?>
+
+        </ul>
+
+    <?php else: ?>
+
+        <p>No hay géneros cargados.</p>
+
+    <?php endif; ?>
+
+    <p>
+        <a href="<?= BASE_URL ?>admin">Volver al administrador</a>
+    </p>
+
+</body>
+</html>

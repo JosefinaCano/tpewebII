@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    background: linear-gradient(to bottom, #181818, #090909);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.catalogo{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: .6vw;
+
+    padding: 2vw 4vw;
+
+  
+}
+
+
+.disco-link{
+    text-decoration: none;
+}
+
+
+.disco{
+    position: relative;
+
+    width: 3vw;
+    height: 20vw;
+
+    background: linear-gradient(to right, #111, #333);
+
+    border-left: .08vw solid #666;
+    border-right: .08vw solid #000;
+
+    border-radius: .2vw;
+
+    cursor: pointer;
+
+    transition: opacity .4s ease, transform .4s ease;
+
+    overflow: visible;
+}
+
+
+.titulo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
+}
+
+.titulo h3{
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    font-size: .75vw;
+    font-weight: normal;
+    letter-spacing: .12vw;
+
+    text-align: center;
+}
+
+
+.disco img{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 18vw;
+    height: 18vw;
+
+    object-fit: cover;
+
+    border-radius: .3vw;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%) scale(.8);
+
+    transition: opacity .35s ease, transform .35s ease;
+
+    z-index: 999;
+}
+
+
+.catalogo:hover .disco{
+    opacity: .25;
+}
+
+.catalogo .disco:hover{
+    opacity: 1;
+    z-index: 1000;
+}
+
+.disco:hover img{
+    opacity: 1;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(1.05);
+
+    box-shadow: 0 2vw 5vw rgba(0,0,0,.9);
+}
+
+.disco:hover .titulo{
+    opacity: 0;
+}
+
+@media (max-width: 900px){
+
+    .disco{
+        width: 5vw;
+        height: 30vw;
+    }
+
+    .titulo h3{
+        font-size: 1.4vw;
+    }
+
+    .disco img{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: 600px){
+
+    .disco{
+        width: 7vw;
+        height: 42vw;
+    }
+
+    .titulo h3{
+        font-size: 2vw;
+    }
+
+    .disco img{
+        width: 45vw;
+        height: 45vw;
+    }
+}

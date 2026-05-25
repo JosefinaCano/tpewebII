@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+.disco-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.disco-portada img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.disco-info {
+    flex: 1;
+}
+
+.disco-info h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.disco-info p {
+    margin: 8px 0;
+    color: #ccc;
+}
+
+.disco-info strong {
+    color: #fff;
+}
+
+.disco-info h2 {
+    margin-top: 25px;
+    font-size: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.temas {
+    margin-top: 15px;
+}
+
+.temas p {
+    margin: 6px 0;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    color: #ddd;
+    transition: all 0.2s ease;
+}
+
+.temas p:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    transform: translateX(5px);
+    color: #fff;
+}
+
+.sin-temas {
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .disco-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .disco-portada img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .disco-info {
+        width: 100%;
+    }
+}

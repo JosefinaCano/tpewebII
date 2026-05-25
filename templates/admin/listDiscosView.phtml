@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrar catálogo</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/list.css">
+</head>
+<body>
+    <h1>Discdogs</h1>
+
+    <p>
+        <a href="<?= BASE_URL ?>admin/addDisco" class="btn-add">Agregar Disco</a>
+    </p>
+
+    <?php if (!empty($discos)): ?>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Fecha de lanzamiento</th>
+                    <th>Artista</th>
+                    <th>Género</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($discos as $disco): ?>
+                    <tr>
+                        <td><?= $disco->id ?></td>
+                        <td><?= htmlspecialchars($disco->titulo) ?></td>
+                        <td><?= htmlspecialchars($disco->fecha_lanzamiento) ?></td>
+                        <td><?= htmlspecialchars($disco->artista_nombre) ?></td>
+                        <td><?= htmlspecialchars($disco->genero_nombre ?? '') ?></td>
+                        <td>
+                            <a href="<?= BASE_URL ?>admin/editDisco/<?= $disco->id ?>" class="btn-edit">
+                                Editar
+                            </a>
+
+                            <a href="<?= BASE_URL ?>admin/deleteDisco/<?= $disco->id ?>"
+                               onclick="return confirm('¿Seguro que querés eliminar este disco?')"
+                               class="btn-delete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>No hay discos para mostrar.</p>
+    <?php endif; ?>
+
+    <p><a href="<?= BASE_URL ?>home" class="back-button">Volver al Home</a></p>
+    <p><a href="<?= BASE_URL ?>admin" class="back-button">Volver al administrador</a></p>
+
+</body>
+</html>

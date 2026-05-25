@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Disco</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add.css">
+</head>
+<body>
+
+<?php require_once 'templates/header.phtml'; ?>
+
+<?php if (!empty($disco) && is_object($disco)): ?>
+
+    <h1>Editar Disco</h1>
+
+    <form action="<?= BASE_URL ?>admin/editDisco/<?= $disco->id ?>" method="post">
+
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" id="titulo"
+               value="<?= htmlspecialchars($disco->titulo) ?>" required>
+
+        <label for="id_artista">Artista:</label>
+        <select name="id_artista" id="id_artista" required>
+            <?php foreach ($artistas as $artista): ?>
+                <option value="<?= $artista->id ?>"
+                    <?= $artista->id == $disco->id_artista ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($artista->nombre) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <label for="fecha_lanzamiento">Fecha de lanzamiento:</label>
+        <input type="date" name="fecha_lanzamiento" id="fecha_lanzamiento"
+               value="<?= $disco->fecha_lanzamiento ?>" required>
+
+        <label for="id_genero">Género:</label>
+        <select name="id_genero" id="id_genero" required>
+            <?php foreach ($generos as $genero): ?>
+                <option value="<?= $genero->id ?>"
+                    <?= $genero->id == $disco->id_genero ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($genero->nombre) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <label for="temas">Temas</label>
+        <textarea name="temas" id="temas"><?= htmlspecialchars($disco->temas) ?></textarea>
+
+        <button type="submit">Guardar cambios</button>
+
+    </form>
+
+<?php else: ?>
+    <p>Disco no encontrado</p>
+<?php endif; ?>
+
+</body>
+</html>

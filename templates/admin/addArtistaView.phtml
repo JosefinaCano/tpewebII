@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Artista</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add.css">
+</head>
+<body>
+    <h1>Agregar Artista</h1>
+
+    <form action="<?= BASE_URL ?>admin/addArtista" method="post">
+        <label for="nombre">Nombre del Artista:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <label for="pais">País:</label>
+        <input type="text" name="pais" id="pais">
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion"></textarea>
+
+        <button type="submit">Agregar Artista</button>
+    </form>
+
+    <p><a href="<?= BASE_URL ?>admin/listArtistas">Volver</a></p>
+</body>
+</html>
